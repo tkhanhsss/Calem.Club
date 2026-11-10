@@ -1,0 +1,205 @@
+/* base44-workspace-fonts:start */
+@font-face {
+  font-family: 'Aether';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://media.base44.com/files/public/builder-assets/wix-fonts/aether-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Aether';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://media.base44.com/files/public/builder-assets/wix-fonts/aether-700-normal.woff2') format('woff2');
+}
+/* base44-workspace-fonts:end */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 98.5%;
+    --foreground: 220 35% 12%;
+    --card: 42 33% 98.5%;
+    --card-foreground: 220 35% 12%;
+    --popover: 42 33% 98.5%;
+    --popover-foreground: 220 35% 12%;
+    --primary: 219 63% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 220 35% 16%;
+    --muted: 40 16% 93%;
+    --muted-foreground: 218 14% 44%;
+    --accent: 40 20% 92%;
+    --accent-foreground: 220 35% 16%;
+    --blush: 350 45% 86%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 16% 87%;
+    --input: 38 16% 85%;
+    --ring: 219 63% 35%;
+    --chart-1: 219 63% 35%;
+    --chart-2: 213 45% 62%;
+    --chart-3: 350 55% 80%;
+    --chart-4: 219 30% 55%;
+    --chart-5: 213 20% 40%;
+    --radius: 0.5rem;
+    --font-display: 'Anton', 'Arial Narrow', ui-sans-serif, sans-serif;
+    --font-heading: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+    --font-editorial: 'Lora', Georgia, serif;
+    --font-script: 'Lora', Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sidebar-background: 42 33% 98.5%;
+    --sidebar-foreground: 220 35% 12%;
+    --sidebar-primary: 219 63% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 94%;
+    --sidebar-accent-foreground: 220 35% 16%;
+    --sidebar-border: 38 16% 87%;
+    --sidebar-ring: 219 63% 35%;
+  }
+
+  .dark {
+    --background: 219 40% 8%;
+    --foreground: 0 0% 98%;
+    --card: 219 35% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 219 35% 11%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 213 60% 62%;
+    --primary-foreground: 219 45% 10%;
+    --secondary: 219 30% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 219 30% 16%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 219 30% 18%;
+    --accent-foreground: 0 0% 98%;
+    --border: 219 22% 22%;
+    --input: 219 22% 24%;
+    --ring: 213 60% 62%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .brand-type {
+    font-family: 'Recoleta', 'Cooper Black', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+
+  .eyebrow {
+    @apply font-heading text-[10.5px] font-semibold uppercase tracking-[0.2em] text-primary;
+  }
+
+  .editorial-kicker {
+    @apply font-editorial italic text-[14.5px] text-muted-foreground;
+  }
+
+  .display {
+    @apply font-display uppercase;
+    letter-spacing: 0.015em;
+    line-height: 1.08;
+  }
+
+  .section-title {
+    @apply font-heading font-semibold tracking-[-0.025em] text-[1.6rem] leading-[1.18] sm:text-[2rem] lg:text-[2.35rem] text-foreground;
+  }
+
+  .studio-surface {
+    background-color: #F3F1EB;
+  }
+
+  .btn-solid {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-5 py-2.5 font-heading text-[13px] font-medium tracking-[-0.005em] text-background transition-colors duration-200 hover:bg-primary;
+  }
+
+  .btn-bronze {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 font-heading text-[13px] font-medium tracking-[-0.005em] text-primary-foreground transition-colors duration-200 hover:bg-foreground;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-foreground/25 px-5 py-2.5 font-heading text-[13px] font-medium tracking-[-0.005em] text-foreground transition-colors duration-200 hover:border-foreground hover:bg-foreground hover:text-background;
+  }
+
+  .section-link {
+    @apply inline-flex shrink-0 items-center gap-1.5 font-heading text-[12.5px] font-medium text-primary transition-colors hover:text-foreground;
+  }
+
+  .link-underline {
+    @apply relative inline-block font-heading text-[11px] font-semibold uppercase tracking-[0.18em] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-100 after:bg-current after:transition-transform after:duration-500 hover:after:scale-x-0;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-border;
+  }
+
+  .checker {
+    background-image: conic-gradient(
+      hsl(var(--primary) / 0.14) 0 25%,
+      transparent 0 50%,
+      hsl(var(--primary) / 0.14) 0 75%,
+      transparent 0
+    );
+    background-size: 28px 28px;
+  }
+}
+
+@keyframes calem-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: calem-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
